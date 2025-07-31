@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Student</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ student.name }} (Roll: {{ student.roll_number }})</h1>
+    <h3>Grades:</h3>
+    {% if student.grades %}
+    <table>
+      <tr>
+        <th>Subject</th>
+        <th>Grade</th>
+      </tr>
+      {% for subject, grade in student.grades.items() %}
+      <tr>
+        <td>{{ subject }}</td>
+        <td>{{ grade }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No grades available.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="btn">Back</a>
+  </div>
+</body>
+</html>

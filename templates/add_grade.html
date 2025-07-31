@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Grade</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Add Grade for {{ student.name }}</h1>
+    <form method="post">
+      <label>Subject:</label><br>
+      <input type="text" name="subject" required><br><br>
+      <label>Grade:</label><br>
+      <input type="number" name="grade" min="0" max="100" required><br><br>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
